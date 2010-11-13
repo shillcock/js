@@ -6,7 +6,7 @@ var dmz =
           }
        }
    , _exports = {}
-   , _form = dmz.ui.loader.load('button')
+   , _form = dmz.ui.loader.load('scripts/button.ui')
    , _main
    , _clicked
    , _toggled

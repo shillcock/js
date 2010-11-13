@@ -6,7 +6,7 @@ var dmz =
           }
        }
    , _exports = {}
-   , _form = dmz.ui.loader.load('comboBox')
+   , _form = dmz.ui.loader.load('scripts/comboBox.ui')
    , _comboBox = _form.lookup('comboBox')
    , _main
    ;

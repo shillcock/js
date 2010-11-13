@@ -11,7 +11,7 @@ var dmz =
    , _print
    , _exports = {}
    , _table = {}
-   , _form = dmz.ui.loader.load('main')
+   , _form = dmz.ui.loader.load('scripts/main.ui')
    , _list = _form.lookup('listWidget')
    , _stack = _form.lookup('stackedWidget')
    , _index = 0

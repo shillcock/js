@@ -7,7 +7,7 @@ var dmz =
           }
        }
    , _exports = {}
-   , _form = dmz.ui.loader.load('log')
+   , _form = dmz.ui.loader.load('scripts/log.ui')
    , _dock = dmz.ui.mainWindow.createDock
        (_form.title()
        , { area: dmz.ui.consts.BottomToolBarArea
