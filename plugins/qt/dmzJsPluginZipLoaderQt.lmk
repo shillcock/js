@@ -1,0 +1,21 @@
+require "lmkQt"
+require "lmkV8"
+lmkV8.set_name ("dmzJsPluginZipLoaderQt", lmkQt.get_flags ())
+lmk.set_type "plugin"
+
+lmk.add_files {"dmzJsPluginZipLoaderQt.cpp",}
+
+lmk.add_preqs {
+   "dmzQtFramework",
+   "dmzJsFramework",
+}
+
+lmk.add_libs {
+   "dmzJsV8Util",
+   "dmzQtUtil",
+   "dmzQtZipFileEngine",
+   "dmzKernel",
+}
+
+lmkV8.add_libs ()
+lmkQt.add_libs {"QtCore", "QtGui",}

@@ -88,7 +88,6 @@ lmk.add_files {
 
 lmk.add_libs {
    "dmzJsV8Util",
-   "dmzQtZipFileEngine",
    "dmzKernel",
 }
 

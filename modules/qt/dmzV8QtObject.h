@@ -69,6 +69,8 @@ namespace dmz {
             }
          };
 
+         void _init_object ();
+
          void _register_callback (
             const String &Signal,
             const V8Object &Self,

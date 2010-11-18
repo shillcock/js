@@ -14,6 +14,7 @@
    <!-- <plugin name="dmzJsExtV8Portal" scope="javascript"/> -->
    <!-- <plugin name="dmzJsExtV8RenderIsect" scope="javascript"/> -->
    <!-- <plugin name="dmzJsExtV8RenderOverlay" scope="javascript"/> -->
+   <plugin name="JsPluginZipLoaderQt" scope="zip-loader"/>
 </plugin-list>
 <javascript>
    <path value="./scripts"/>
@@ -23,4 +24,8 @@
    <instance name="button"/>
    <instance name="comboBox"/>
 </javascript>
+<zip-loader>
+   <path value="./scripts"/>
+   <instance name="tool1"/>
+</zip-loader>
 </dmz>

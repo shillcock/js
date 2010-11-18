@@ -2,7 +2,6 @@
 #include <dmzJsModuleV8.h>
 #include <dmzJsV8UtilConvert.h>
 #include <dmzQtModuleMainWindow.h>
-#include <dmzQtZipFileEngineHandler.h>
 #include <dmzRuntimeConfig.h>
 #include <dmzRuntimeConfigToStringContainer.h>
 #include <dmzRuntimeConfigToTypesBase.h>
@@ -32,13 +31,9 @@ dmz::JsModuleUiV8QtBasic::_uiloader_load (const v8::Arguments &Args) {
 
    if (self && Name) {
 
-//      const String FileName = self->_find_ui_file (Name);
-      const String FileName = Name;
+      const String FileName = self->_find_ui_file (Name);
 
       if (FileName) {
-
-         String zipFile ("test.zip");
-         QtZipFileEngineHandler zipHandler (zipFile, &(self->_log));
 
          QUiLoader loader;
          QFile file (FileName.get_buffer ());

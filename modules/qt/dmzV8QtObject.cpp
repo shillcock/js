@@ -2,6 +2,61 @@
 #include "dmzV8QtObject.h"
 #include "dmzV8QtUtil.h"
 
+#include <QtCore/QDebug>
+
+
+using namespace dmz;
+
+namespace {
+
+static V8Value
+local_get_property (v8::Local<v8::String> property, const v8::AccessorInfo &Info) {
+
+   v8::HandleScope scope;
+   V8Value result = v8::Undefined ();
+
+   V8QtObject *ptr = (V8QtObject *)v8::External::Unwrap (Info.Data ());
+   if (ptr) {
+
+      QObject *object = ptr->get_qobject ();
+      if (object) {
+
+         const String Name (v8_to_string (property));
+         QVariant prop = object->property (Name.get_buffer ());
+         result = qvariant_to_v8 (prop);
+      }
+   }
+
+   return scope.Close (result);
+}
+
+
+void
+local_set_property (
+      v8::Local<v8::String> property,
+      v8::Local<v8::Value> value,
+      const v8::AccessorInfo &Info) {
+
+   v8::HandleScope scope;
+
+   V8QtObject *ptr = (V8QtObject *)v8::External::Unwrap (Info.Data ());
+   if (ptr) {
+
+      QObject *object = ptr->get_qobject ();
+      if (object) {
+
+         QVariant inValue = v8_to_qvariant (value);
+         if (inValue.isValid ()) {
+
+            const String Name (v8_to_string (property));
+            object->setProperty (Name.get_buffer (), inValue);
+         }
+      }
+   }
+}
+
+};
+
 
 dmz::V8QtObject::V8QtObject (
       const V8Object &Self,
@@ -82,6 +137,16 @@ dmz::V8QtObject::release_callback (const Handle Observer) {
 
 void
 dmz::V8QtObject::set_delete_object (const Boolean Value) { _deleteObject = Value; }
+
+
+void
+dmz::V8QtObject::_init_object () {
+
+   if (_object) {
+
+
+   }
+}
 
 
 void
