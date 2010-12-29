@@ -6,6 +6,7 @@
 #include <dmzRuntimePluginFactoryLinkSymbol.h>
 #include <dmzRuntimePluginInfo.h>
 
+
 dmz::JsPluginZipLoaderQt::JsPluginZipLoaderQt (const PluginInfo &Info, Config &local) :
       Plugin (Info),
       JsExtV8 (Info),
@@ -62,7 +63,6 @@ dmz::JsPluginZipLoaderQt::update_js_module_v8 (const ModeEnum Mode, JsModuleV8 &
 
    if (Mode == JsExtV8::Store) { if (!_core) { _core = &module; } }
    else if (Mode == JsExtV8::Remove) { if (&module == _core) { _core = 0; } }
-
 }
 
 
