@@ -23,6 +23,7 @@
    <instance name="main"/>
    <instance name="button"/>
    <instance name="comboBox"/>
+   <instance name="createTest"/>
 </javascript>
 <zip-loader>
    <path value="./scripts"/>
