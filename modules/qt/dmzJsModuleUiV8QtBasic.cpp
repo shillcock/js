@@ -764,6 +764,11 @@ dmz::JsModuleUiV8QtBasic::update_js_ext_v8_state (const StateEnum State) {
          _gTextCtor = V8FunctionPersist::New (_gTextTemp->GetFunction ());
       }
 
+      if (!_gPixmapItemTemp.IsEmpty ()) {
+
+         _gPixmapItemCtor = V8FunctionPersist::New (_gPixmapItemTemp->GetFunction ());
+      }
+
       if (!_gLineTemp.IsEmpty ()) {
 
          _gLineCtor = V8FunctionPersist::New (_gLineTemp->GetFunction ());
@@ -1154,6 +1159,7 @@ dmz::JsModuleUiV8QtBasic::update_js_ext_v8_state (const StateEnum State) {
       _gAbsItemCtor.Dispose (); _gAbsItemCtor.Clear ();
       _gRectCtor.Dispose (); _gRectCtor.Clear ();
       _gTextCtor.Dispose (); _gTextCtor.Clear ();
+      _gPixmapItemCtor.Dispose (); _gPixmapItemCtor.Clear ();
       _gLineCtor.Dispose (); _gLineCtor.Clear ();
       _gPathCtor.Dispose (); _gPathCtor.Clear ();
       _gPainterPathCtor.Dispose (); _gPainterPathCtor.Clear ();
@@ -1616,6 +1622,7 @@ dmz::JsModuleUiV8QtBasic::_init (Config &local) {
    _init_grect_item ();
    _init_gpath_item ();
    _init_gtext_item ();
+   _init_gpixmap_item ();
    _init_gline_item ();
    _init_gview ();
    _init_gscene ();

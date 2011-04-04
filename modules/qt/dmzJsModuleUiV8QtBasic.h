@@ -516,6 +516,7 @@ namespace dmz {
          static V8Value _create_grect_item (const v8::Arguments &Args);
          static V8Value _create_gtext_item (const v8::Arguments &Args);
          static V8Value _create_gline_item (const v8::Arguments &Args);
+         static V8Value _create_gpixmap_item (const v8::Arguments &Args);
          static V8Value _create_gpath_item (const v8::Arguments &Args);
          static V8Value _create_gwebview (const v8::Arguments &Args);
          static V8Value _create_gscene (const v8::Arguments &Args);
@@ -560,6 +561,8 @@ namespace dmz {
 
          static V8Value _grect_rect (const v8::Arguments &Args);
 
+         static V8Value _gpixmap_item_offset (const v8::Arguments &Args);
+
          static V8Value _gpath_path (const v8::Arguments &Args);
 
          static V8Value _gtext_adjust_size (const v8::Arguments &Args);
@@ -596,6 +599,7 @@ namespace dmz {
          static V8Value _gscene_add_path (const v8::Arguments &Args);
          static V8Value _gscene_add_rect (const v8::Arguments &Args);
          static V8Value _gscene_add_text (const v8::Arguments &Args);
+         static V8Value _gscene_add_pixmap (const v8::Arguments &Args);
          static V8Value _gscene_bg_brush (const v8::Arguments &Args);
          static V8Value _gscene_clear_focus (const v8::Arguments &Args);
          static V8Value _gscene_colliding_items (const v8::Arguments &Args);
@@ -816,6 +820,7 @@ namespace dmz {
          void _init_grect_item ();
          void _init_gpath_item ();
          void _init_gtext_item ();
+         void _init_gpixmap_item ();
          void _init_gline_item ();
          void _init_gview ();
          void _init_gscene ();
@@ -1028,6 +1033,9 @@ namespace dmz {
 
          V8FunctionTemplatePersist _gTextTemp;
          V8FunctionPersist _gTextCtor;
+
+         V8FunctionTemplatePersist _gPixmapItemTemp;
+         V8FunctionPersist _gPixmapItemCtor;
 
          V8FunctionTemplatePersist _gLineTemp;
          V8FunctionPersist _gLineCtor;
